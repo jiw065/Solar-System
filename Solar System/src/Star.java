@@ -13,16 +13,16 @@ public class Star {
 		
 	}
 	// constructor for solar
-	public Star(Image img, double x,double y) {
-		this.img = img;
+	public Star(String imgPath, double x,double y) {
+		this.img = GameUtil.getImage(imgPath);
 		this.x = x;
 		this.y = y;
 		this.width = img.getWidth(null);
 		this.height = img.getHeight(null);
 	}
 	
-	public Star(Image img) {
-		this.img = img; 
+	public Star(String imgPath) {
+		this.img = GameUtil.getImage(imgPath);
 		this.width = img.getWidth(null);
 		this.height = img.getHeight(null);
 	}

@@ -15,12 +15,14 @@ public class MyFrame extends Frame {
 		Color c =  g.getColor();
 		g.drawImage(Constant.BACKGROUND_IMG, 0, 0, null);
 	}
-	
+	Star sun=new Star("images/sun.jpg",Constant.WINDOW_WIDTH/2,Constant.WINDOW_HEIGHT/2);
 	public  void  launchFrame(){
 		this.setTitle("Solar System");
 		this.setVisible(true);
 		this.setSize(Constant.WINDOW_WIDTH, Constant.WINDOW_HEIGHT);
 		this.setLocation(300, 300);
+		
+		
 		
 		this.addWindowListener(new WindowAdapter() {
 			@Override

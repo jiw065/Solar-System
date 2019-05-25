@@ -10,7 +10,7 @@ public class Planet extends Star {
 	String name; 
 	double longAxis, shortAxis;
 	
-	public Planet(Image img, Star center, double longAxis, double shortAxis, double speed, String name ) {
+	public Planet(String img, Star center, double longAxis, double shortAxis, double speed, String name ) {
 		 super(img);
 		 this.center = center;
 		 this.longAxis = longAxis;
@@ -22,7 +22,7 @@ public class Planet extends Star {
 	}
 	
 	// constructor for satellite
-	public Planet(Image img, Star center, double longAxis, double shortAxis, double speed,boolean satellite,String name ) {
+	public Planet(String img, Star center, double longAxis, double shortAxis, double speed,boolean satellite,String name ) {
 		 this(img, center, longAxis, shortAxis, speed, name);
 		 this.satellite = satellite;	
 	}
