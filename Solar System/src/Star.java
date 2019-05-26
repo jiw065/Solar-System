@@ -3,7 +3,12 @@ import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Image;
 
-
+/**
+ * This is the parent class for all stars
+ * sun is the instance of this class as it cannot move
+ * @author Amber
+ *
+ */
 
 public class Star {
 	Image img;

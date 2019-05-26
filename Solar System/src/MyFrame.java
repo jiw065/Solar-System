@@ -5,7 +5,11 @@ import java.awt.Image;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
-
+/**
+ * This is the display window for program
+ * @author Amber
+ *
+ */
 public class MyFrame extends Frame {
 
 	/**
@@ -40,14 +44,12 @@ public class MyFrame extends Frame {
 		moon.drawStar(g);
 	}
     
+    
 	public  void  launchFrame(){
 		this.setTitle("Solar System");
 		this.setVisible(true);
 		this.setSize(Constant.WINDOW_WIDTH, Constant.WINDOW_HEIGHT);
 		this.setLocation(300, 300);
-		
-		
-		
 		this.addWindowListener(new WindowAdapter() {
 			@Override
 			public void windowClosing(WindowEvent e) {
@@ -57,6 +59,7 @@ public class MyFrame extends Frame {
 		new PaintThread().start();	
 	}
 	
+	// this thread is used to repaint the frame 
 	class  PaintThread  extends  Thread  {
 		@Override
 		public void run() {
@@ -80,6 +83,7 @@ public class MyFrame extends Frame {
 
 	}
 	
+	// solve display problem, copied from internet
 	private Image offScreenImage = null;
 	 
 	public void update(Graphics g) {

@@ -1,13 +1,15 @@
 import java.awt.Color;
-import java.awt.Font;
 import java.awt.Graphics;
-import java.awt.Image;
 
-
+/**
+ * this class inherits star
+ * @author Amber
+ *
+ */
 public class Planet extends Star {
-	double degree = 180;
+	double degree = 0;
 	double speed;
-	boolean satellite;
+	boolean satellite; // if the star is satellite, do not draw trace
 	Star center;
 	String name; 
 	double longAxis, shortAxis;
