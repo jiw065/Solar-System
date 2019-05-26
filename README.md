@@ -1,7 +1,7 @@
 # Solar-System
 *This is a simple solar system simulator written in Java*
 
-./solar-system.PNG
+![solar system demo](./solar-system.PNG)
 
 press 'space button' to pause/resume animation.  
 
