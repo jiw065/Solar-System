@@ -1,2 +1,8 @@
 # Solar-System
-*This is a simple solar system simulation written in Java*
+*This is a simple solar system simulator written in Java*
+
+press 'space button' to pause/resume animation.  
+
+This project is used for Practicing OOP design concepts include super class/sub class, interface, methods overriding & overloading.
+other knowledge points:
+Java awt, event listener, multi-thread
