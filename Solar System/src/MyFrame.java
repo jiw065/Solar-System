@@ -11,11 +11,14 @@ import java.awt.event.WindowEvent;
 
 public class MyFrame extends Frame {
 
+	Star sun = new Star("images/sun.jpg",Constant.WINDOW_WIDTH/2,Constant.WINDOW_HEIGHT/2,"Sun");
+    Planet earth = new Planet("images/Earth.jpg", sun, 145, 95, 0.06, "Earth");
 	public void paint(Graphics g) {		
 		Color c =  g.getColor();
 		g.drawImage(Constant.BACKGROUND_IMG, 0, 0, null);
+		sun.drawStar(g);
+		earth.drawStar(g);
 	}
-	Star sun=new Star("images/sun.jpg",Constant.WINDOW_WIDTH/2,Constant.WINDOW_HEIGHT/2);
 	public  void  launchFrame(){
 		this.setTitle("Solar System");
 		this.setVisible(true);

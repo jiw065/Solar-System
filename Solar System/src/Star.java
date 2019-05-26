@@ -1,3 +1,5 @@
+import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Image;
 
@@ -7,28 +9,35 @@ public class Star {
 	Image img;
 	double x,y; //position
 	int width, height;
+	String name;
 	
 	//default constructor allows subclass has independent constructor
 	public Star() {
 		
 	}
-	// constructor for solar
-	public Star(String imgPath, double x,double y) {
+	
+	public Star(String imgPath, String name) {
 		this.img = GameUtil.getImage(imgPath);
-		this.x = x;
-		this.y = y;
+		this.name = name; 
 		this.width = img.getWidth(null);
 		this.height = img.getHeight(null);
 	}
-	
-	public Star(String imgPath) {
-		this.img = GameUtil.getImage(imgPath);
-		this.width = img.getWidth(null);
-		this.height = img.getHeight(null);
+	// constructor for solar
+	public Star(String imgPath, double x,double y,String name) {
+		this(imgPath, name);
+		this.x = x;
+		this.y = y;
 	}
 	
 
+	
+
 	public void  drawStar(Graphics g) {
+		Color c = g.getColor();
+		g.setColor(Color.LIGHT_GRAY);
+		g.setFont(new Font("TimesRoman", Font.PLAIN, 15));
+    	g.drawString(this.name, (int)x-2, (int)y-5);
+    	g.setColor(c);
 		g.drawImage(img, (int)x, (int)y, null);
 	}
 	
