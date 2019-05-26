@@ -2,8 +2,12 @@ import java.awt.Color;
 import java.awt.Frame;
 import java.awt.Graphics;
 import java.awt.Image;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+
 
 /**
  * This is the display window for program
@@ -16,7 +20,7 @@ public class MyFrame extends Frame {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	
+	boolean stop = false; 
 	Star sun = new Star("images/sun.jpg",Constant.WINDOW_WIDTH/2,Constant.WINDOW_HEIGHT/2,"Sun");	
     Planet earth = new Planet("images/Earth.jpg", sun, 145, 95, 0.06, "Earth");
 	Planet jupiter = new Planet("images/Jupiter.jpg", sun, 230,160,0.04, "Jupiter");
@@ -56,6 +60,7 @@ public class MyFrame extends Frame {
 				System.exit(0);
 			}
 		});	
+		addKeyListener(new KeyMonitor());  
 		new PaintThread().start();	
 	}
 	
@@ -63,9 +68,8 @@ public class MyFrame extends Frame {
 	class  PaintThread  extends  Thread  {
 		@Override
 		public void run() {
-			while(true){
-				repaint();		
-				
+			while(!stop){
+				repaint();						
 				try {
 					Thread.sleep(40);   	//1s=1000ms
 				} catch (InterruptedException e) {
@@ -75,7 +79,30 @@ public class MyFrame extends Frame {
 		}
 		
 	}
-	
+	class KeyMonitor implements KeyListener{
+		@Override
+		public void keyReleased(KeyEvent e) {
+			if(e.getKeyCode() == KeyEvent.VK_SPACE) {
+				stop = !stop;
+				if(!stop) {
+					new PaintThread().start();	
+				}
+			}
+		}
+
+		@Override
+		public void keyTyped(KeyEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void keyPressed(KeyEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+				
+	}
 	
 	public static void main(String[] args) {
 		MyFrame  f = new MyFrame();
