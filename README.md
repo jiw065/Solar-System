@@ -4,5 +4,6 @@
 press 'space button' to pause/resume animation.  
 
 This project is used for Practicing OOP design concepts include super class/sub class, interface, methods overriding & overloading.
-other knowledge points:
+
+Additional knowledge points:
 Java awt, event listener, multi-thread
