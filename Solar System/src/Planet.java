@@ -5,7 +5,7 @@ import java.awt.Image;
 
 
 public class Planet extends Star {
-	double degree = 0;
+	double degree = 180;
 	double speed;
 	boolean satellite;
 	Star center;
@@ -41,11 +41,15 @@ public class Planet extends Star {
         g.setColor(c);
     }
     
-	
+	public void move() {
+		x=center.x+center.width/2-width/2+longAxis*Math.cos(degree);
+	    y=center.y+center.height/2-height/2+shortAxis*Math.sin(degree);
+		degree+=speed;
+	}
 
 	public void drawStar(Graphics g) {
 		super.drawStar(g);
-		
+		move();
 		if(!satellite) {
 			drawTrace(g);
 		}	
